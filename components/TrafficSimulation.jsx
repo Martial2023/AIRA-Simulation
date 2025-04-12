@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react';
+import { RotateCcw } from 'lucide-react';
 
 
 // Constantes (équivalent à settings.py)
@@ -677,7 +678,7 @@ const TrafficSimulation = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gray-100 w-full grid grid-cols-10 py-8 gap-4 p-4">
+        <div className="min-h-screen bg-gray-100 w-full grid-cols-1 md:grid md:grid-cols-10 py-8 gap-4 p-4">
 
             <div className='maw-w-[95vh] overflow-x-scroll col-span-8 bg-white shadow-lg rounded-lg p-6 mb-6'>
                 <div className="">
@@ -685,54 +686,57 @@ const TrafficSimulation = () => {
                 </div>
             </div>
 
-            <div className="col-span-2 w-full max-w-[90vh] bg-white p-6 mb-8 rounded-xl shadow-sm border border-gray-100 bg-opacity-90 backdrop-blur-md flex-2">
-                <h2 className="text-2xl font-medium text-gray-800 mb-6 text-center">Panneau de contrôle</h2>
+            <div className='col-span-2'>
+                <div className="w-full max-w-[90vh] bg-white p-6 mb-8 rounded-xl shadow-sm border border-gray-100 bg-opacity-90 backdrop-blur-md flex-2">
+                    <h2 className="text-2xl font-medium text-gray-800 mb-6 text-center">Panneau de contrôle</h2>
 
-                <div className='flex items-center justify-center'>
-                    <button onClick={() => window.location.reload()} className="flex justify-center mb-4">
-                        <div className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
-                            Restart Simulation
-                        </div>
-                    </button>
-                </div>
-
-                <div className="flex flex-col gap-4">
-                    {['a', 'b', 'c', 'd', 'e', 'f'].map(intersection => (
-                        <div key={intersection} className="flex flex-col items-center space-y-2">
-                            <h3 className="text-lg font-medium text-gray-600">Intersection {intersection.toUpperCase()}</h3>
-                            <div className="flex space-x-2">
-                                <button
-                                    onClick={() => toggleIntersection(intersection, false)}
-                                    className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors"
-                                >
-                                    Disable
-                                </button>
-                                <button
-                                    onClick={() => toggleIntersection(intersection, true)}
-                                    className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors"
-                                >
-                                    Enable
-                                </button>
+                    <div className='flex items-center justify-center'>
+                        <button onClick={() => window.location.reload()} className="flex justify-center mb-4 cursor-pointer">
+                            <div className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors flex items-center gap-2">
+                                <RotateCcw className="w-4 h-4"/>
+                                Restart Simulation
                             </div>
+                        </button>
+                    </div>
+
+                    <div className="flex flex-col gap-4">
+                        {['a', 'b', 'c', 'd', 'e', 'f'].map(intersection => (
+                            <div key={intersection} className="flex flex-col items-center space-y-2">
+                                <h3 className="text-lg font-medium text-gray-600">Intersection {intersection.toUpperCase()}</h3>
+                                <div className="flex space-x-2">
+                                    <button
+                                        onClick={() => toggleIntersection(intersection, false)}
+                                        className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors"
+                                    >
+                                        Disable
+                                    </button>
+                                    <button
+                                        onClick={() => toggleIntersection(intersection, true)}
+                                        className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors"
+                                    >
+                                        Enable
+                                    </button>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                    <div className="mt-6">
+                        <h3 className="text-lg font-medium text-gray-700 mb-3">Densité du trafic</h3>
+                        <p className="text-sm text-gray-500 mb-2">Véhicules par seconde: <span className="font-medium text-gray-700">{trafficDensity.toFixed(1)}</span></p>
+                        <input
+                            type="range"
+                            min="0"
+                            max="10"
+                            step="0.1"
+                            value={trafficDensity}
+                            onChange={(e) => setTrafficDensity(Number(e.target.value))}
+                            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-500"
+                        />
+                        <div className="flex justify-between text-sm text-gray-500 mt-1">
+                            <span>0</span>
+                            <span>{trafficDensity.toFixed(1)}</span>
+                            <span>10</span>
                         </div>
-                    ))}
-                </div>
-                <div className="mt-6">
-                    <h3 className="text-lg font-medium text-gray-700 mb-3">Densité du trafic</h3>
-                    <p className="text-sm text-gray-500 mb-2">Véhicules par seconde: <span className="font-medium text-gray-700">{trafficDensity.toFixed(1)}</span></p>
-                    <input
-                        type="range"
-                        min="0"
-                        max="10"
-                        step="0.1"
-                        value={trafficDensity}
-                        onChange={(e) => setTrafficDensity(Number(e.target.value))}
-                        className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-500"
-                    />
-                    <div className="flex justify-between text-sm text-gray-500 mt-1">
-                        <span>0</span>
-                        <span>{trafficDensity.toFixed(1)}</span>
-                        <span>10</span>
                     </div>
                 </div>
             </div>

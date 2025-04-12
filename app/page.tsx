@@ -20,7 +20,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 py-8">
+      <div className="container mx-auto px-6 pt-8">
         <h1 className="text-3xl font-semibold text-gray-800 text-center">
           Simulation du trafic
         </h1>

@@ -3,7 +3,10 @@ import { FaCar, FaTrafficLight, FaNetworkWired, FaClock, FaBrain } from 'react-i
 
 export default function AiraDescription() {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-100 py-12 px-6">
+        <div
+            id="running"
+            className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-100 py-12 px-6"
+        >
             <div className="max-w-5xl mx-auto">
                 {/* Titre principal */}
                 <h1 className="text-5xl font-extrabold text-center text-blue-800 mb-12">
