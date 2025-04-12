@@ -1,5 +1,5 @@
 // pages/aira-implementation.js
-import { FaCamera, FaCloudRain, FaServer, FaRobot, FaNetworkWired, FaClock } from 'react-icons/fa';
+import { FaCamera, FaServer, FaRobot, FaNetworkWired, FaClock } from 'react-icons/fa';
 
 export default function AiraImplementation() {
     return (
