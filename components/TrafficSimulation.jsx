@@ -95,7 +95,7 @@ const stopLines = {
     c: { up: 218, down: 313, left: 1130, right: 1208 },
     d: { up: 600, down: 700, left: 198, right: 275 },
     e: { up: 600, down: 700, left: 666, right: 742 },
-    f: { up: 600, down: 700, left: 1130, right: 1208 },
+    f: { up: 600, down: 700, left: 1145, right: 1208 },
 };
 
 const TrafficSimulation = () => {
@@ -334,35 +334,35 @@ const TrafficSimulation = () => {
     const initializeTrafficLights = () => {
         const trafficLights = [];
         // Intersection a
-        trafficLights.push(new TrafficLight({ position: [180, 160], intersection: "a", direction: "down", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "green", rotation: 180 }));
+        trafficLights.push(new TrafficLight({ position: [186, 180], intersection: "a", direction: "down", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "green", rotation: 180 }));
         trafficLights.push(new TrafficLight({ position: [158, 300], intersection: "a", direction: "right", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "red", rotation: -90 }));
-        trafficLights.push(new TrafficLight({ position: [280, 175], intersection: "a", direction: "left", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "green", rotation: -90 }));
-        trafficLights.push(new TrafficLight({ position: [280, 300], intersection: "a", direction: "up", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "green", rotation: 0 }));
+        trafficLights.push(new TrafficLight({ position: [296, 190], intersection: "a", direction: "left", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "red", rotation: -90 }));
+        trafficLights.push(new TrafficLight({ position: [285, 320], intersection: "a", direction: "up", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "green", rotation: 0 }));
         // Intersection b
-        trafficLights.push(new TrafficLight({ position: [640, 158], intersection: "b", direction: "down", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "green", rotation: 180 }));
-        trafficLights.push(new TrafficLight({ position: [740, 175], intersection: "b", direction: "left", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "green", rotation: 90 }));
-        trafficLights.push(new TrafficLight({ position: [620, 300], intersection: "b", direction: "right", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "red", rotation: -90 }));
-        trafficLights.push(new TrafficLight({ position: [745, 300], intersection: "b", direction: "up", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "green", rotation: 0 }));
+        trafficLights.push(new TrafficLight({ position: [655, 180], intersection: "b", direction: "down", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "green", rotation: 180 }));
+        trafficLights.push(new TrafficLight({ position: [755, 185], intersection: "b", direction: "left", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "green", rotation: 90 }));
+        trafficLights.push(new TrafficLight({ position: [645, 300], intersection: "b", direction: "right", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "red", rotation: -90 }));
+        trafficLights.push(new TrafficLight({ position: [750, 315], intersection: "b", direction: "up", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "green", rotation: 0 }));
         // Intersection c
-        trafficLights.push(new TrafficLight({ position: [1105, 158], intersection: "c", direction: "down", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "red", rotation: 180 }));
-        trafficLights.push(new TrafficLight({ position: [1205, 175], intersection: "c", direction: "left", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "green", rotation: 90 }));
-        trafficLights.push(new TrafficLight({ position: [1085, 300], intersection: "c", direction: "right", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "green", rotation: -90 }));
-        trafficLights.push(new TrafficLight({ position: [1220, 300], intersection: "c", direction: "up", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "green", rotation: 0 }));
+        trafficLights.push(new TrafficLight({ position: [1110, 172], intersection: "c", direction: "down", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "red", rotation: 180 }));
+        trafficLights.push(new TrafficLight({ position: [1225, 180], intersection: "c", direction: "left", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "green", rotation: 90 }));
+        trafficLights.push(new TrafficLight({ position: [1100, 300], intersection: "c", direction: "right", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "green", rotation: -90 }));
+        trafficLights.push(new TrafficLight({ position: [1220, 310], intersection: "c", direction: "up", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "green", rotation: 0 }));
         // Intersection d
-        trafficLights.push(new TrafficLight({ position: [1105, 515], intersection: "d", direction: "down", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "green", rotation: 180 }));
-        trafficLights.push(new TrafficLight({ position: [1210, 530], intersection: "d", direction: "left", redDuration: 80, yellowDuration: 50, greenDuration: 80, initialState: "red", rotation: 90 }));
-        trafficLights.push(new TrafficLight({ position: [1085, 650], intersection: "d", direction: "right", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "green", rotation: -90 }));
-        trafficLights.push(new TrafficLight({ position: [1210, 650], intersection: "d", direction: "up", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "red", rotation: 0 }));
+        trafficLights.push(new TrafficLight({ position: [1115, 530], intersection: "d", direction: "down", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "green", rotation: 180 }));
+        trafficLights.push(new TrafficLight({ position: [1225, 540], intersection: "d", direction: "left", redDuration: 80, yellowDuration: 50, greenDuration: 80, initialState: "red", rotation: 90 }));
+        trafficLights.push(new TrafficLight({ position: [1110, 655], intersection: "d", direction: "right", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "green", rotation: -90 }));
+        trafficLights.push(new TrafficLight({ position: [1210, 670], intersection: "d", direction: "up", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "red", rotation: 0 }));
         // Intersection e
-        trafficLights.push(new TrafficLight({ position: [645, 515], intersection: "e", direction: "down", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "green", rotation: 180 }));
-        trafficLights.push(new TrafficLight({ position: [745, 535], intersection: "e", direction: "left", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "green", rotation: 90 }));
-        trafficLights.push(new TrafficLight({ position: [620, 650], intersection: "e", direction: "right", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "red", rotation: -90 }));
-        trafficLights.push(new TrafficLight({ position: [745, 650], intersection: "e", direction: "up", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "green", rotation: 0 }));
+        trafficLights.push(new TrafficLight({ position: [650, 535], intersection: "e", direction: "down", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "green", rotation: 180 }));
+        trafficLights.push(new TrafficLight({ position: [760, 540], intersection: "e", direction: "left", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "green", rotation: 90 }));
+        trafficLights.push(new TrafficLight({ position: [640, 655], intersection: "e", direction: "right", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "red", rotation: -90 }));
+        trafficLights.push(new TrafficLight({ position: [750, 665], intersection: "e", direction: "up", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "green", rotation: 0 }));
         // Intersection f
-        trafficLights.push(new TrafficLight({ position: [180, 515], intersection: "f", direction: "down", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "green", rotation: -180 }));
-        trafficLights.push(new TrafficLight({ position: [280, 540], intersection: "f", direction: "left", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "green", rotation: 90 }));
-        trafficLights.push(new TrafficLight({ position: [158, 655], intersection: "f", direction: "right", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "red", rotation: -90 }));
-        trafficLights.push(new TrafficLight({ position: [280, 650], intersection: "f", direction: "up", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "red", rotation: 0 }));
+        trafficLights.push(new TrafficLight({ position: [180, 535], intersection: "f", direction: "down", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "green", rotation: -180 }));
+        trafficLights.push(new TrafficLight({ position: [290, 550], intersection: "f", direction: "left", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "green", rotation: 90 }));
+        trafficLights.push(new TrafficLight({ position: [178, 655], intersection: "f", direction: "right", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "red", rotation: -90 }));
+        trafficLights.push(new TrafficLight({ position: [280, 665], intersection: "f", direction: "up", redDuration: 80, yellowDuration: 50, greenDuration: 100, initialState: "red", rotation: 0 }));
 
         simulationState.current.trafficLights = trafficLights;
     };
@@ -677,14 +677,26 @@ const TrafficSimulation = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gray-100 flex flex-col items-center py-8">
-            <div className="bg-white shadow-lg rounded-lg p-6 mb-6">
-                <div ref={sketchRef} className="mx-auto"></div>
+        <div className="min-h-screen bg-gray-100 w-full grid grid-cols-10 py-8 gap-4 p-4">
+
+            <div className='maw-w-[95vh] overflow-x-scroll col-span-8 bg-white shadow-lg rounded-lg p-6 mb-6'>
+                <div className="">
+                    <div ref={sketchRef} className="mx-auto"></div>
+                </div>
             </div>
 
-            <div className="w-full max-w-lg bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                <h2 className="text-2xl font-medium text-gray-800 mb-6">Panneau de contrôle</h2>
-                <div className="grid grid-cols-2 gap-4">
+            <div className="col-span-2 w-full max-w-[90vh] bg-white p-6 mb-8 rounded-xl shadow-sm border border-gray-100 bg-opacity-90 backdrop-blur-md flex-2">
+                <h2 className="text-2xl font-medium text-gray-800 mb-6 text-center">Panneau de contrôle</h2>
+
+                <div className='flex items-center justify-center'>
+                    <button onClick={() => window.location.reload()} className="flex justify-center mb-4">
+                        <div className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                            Restart Simulation
+                        </div>
+                    </button>
+                </div>
+
+                <div className="flex flex-col gap-4">
                     {['a', 'b', 'c', 'd', 'e', 'f'].map(intersection => (
                         <div key={intersection} className="flex flex-col items-center space-y-2">
                             <h3 className="text-lg font-medium text-gray-600">Intersection {intersection.toUpperCase()}</h3>
@@ -724,6 +736,8 @@ const TrafficSimulation = () => {
                     </div>
                 </div>
             </div>
+
+
         </div>
     );
 };
