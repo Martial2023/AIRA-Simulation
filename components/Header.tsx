@@ -20,7 +20,7 @@ const Header = () => {
                             className="rounded-md shadow-sm"
                         />
                     </div>
-                    <h2 className="font-medium text-gray-800 text-2xl">AIVerse</h2>
+                    <h2 className="font-medium text-gray-800 text-2xl">AIverse</h2>
                 </Link>
 
                 <div className="items-center gap-2 text-sm text-gray-600 italic hidden md:flex">
