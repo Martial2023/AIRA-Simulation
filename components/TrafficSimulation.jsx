@@ -554,6 +554,27 @@ const TrafficSimulation = () => {
                         }
                     });
 
+                    const intersections = {
+                        a: [235, 255],
+                        b: [700, 255],
+                        c: [1165, 255],
+                        f: [235, 620],
+                        e: [700, 620],
+                        d: [1165, 620],
+                    };
+                
+                    // Style du texte
+                    p.textSize(20); // Taille du texte
+                    p.textAlign(p.CENTER, p.CENTER); // Centrer le texte
+                    p.fill(255, 255, 255); // Couleur rouge pour les lettres
+                    p.stroke(0); // Contour noir pour plus de lisibilité
+                    p.strokeWeight(2);
+                
+                    // Dessiner chaque lettre
+                    for (let [key, [x, y]] of Object.entries(intersections)) {
+                        p.text(key.toUpperCase(), x, y); // Dessiner la lettre en majuscule (A, B, C, etc.)
+                    }
+
                     // Mettre à jour et dessiner les véhicules
                     simulationState.current.vehicles.forEach(vehicle => {
                         vehicle.update();
